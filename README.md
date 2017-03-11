@@ -1,7 +1,7 @@
 # Настройка красивого терминала
 Окончательный вид терминала:
 
-
+![terminal](https://rawgit.com/DmitryGaranin/zsh-beautiful/master/images/zsh_powerleve9k.png)
 
 ## Oh-my-zsh
 
