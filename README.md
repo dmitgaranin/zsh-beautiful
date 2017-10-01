@@ -3,6 +3,12 @@
 
 ![terminal](https://rawgit.com/DmitryGaranin/zsh-beautiful/master/images/zsh_powerleve9k.png)
 
+## Zsh
+
+```
+sudo apt-get install zsh
+```
+
 ## Oh-my-zsh
 
 ```
@@ -34,28 +40,31 @@ export DEFAULT_USER="$USER"
 
 # `theme`
 ZSH_THEME="powerlevel9k/powerlevel9k"
-
 ```
+
+В терминале выполняем: `sudo chsh -s /bin/zsh` и перезапускаем сеанс пользователя
+
+
 Дополнительная информация:
 * [Powerlevel9k](https://github.com/bhilburn/powerlevel9k)
 * [Много готовых конфигураций](https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config)
 
 
-## Font Awesome
+## Font Awesome (добавляем красивые иконки)
 
-1. Устанавливаем:
+1. Скачиваем репозиторий и следуем инструкции по установке из его readme:
 ```
-sudo apt-get install fonts-font-awesome
+https://github.com/gabrielelana/awesome-terminal-fonts
 ```
-2. и ставим в терминале шрифтом по умолчанию:
-
-`Открыть терминал > Edit > Profile preferences > Custom font > Выбрать 'Font Awesome'`
+2. __Либо__ выбираем в папке `./fonts/fontawesome-regular.ttf`
+3. Двойной клик > Установить
+4. `fc-cache -fv ~/.fonts`
+5. `source ~/.zshrc` либо перезапустить терминал
 
 ## Zsh-Autosuggestions (через oh-my-zsh)
 Оригинал установки: [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
 1. Склонировать репозиторий в `$ZSH_CUSTOM/plugins` (по умолчанию `~/.oh-my-zsh/custom/plugins`)
-
 ```
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
@@ -63,17 +72,15 @@ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh
 ```
 plugins=(zsh-autosuggestions)
 ```
-3. Запустить команду `source ~/.zshrc` либо перезапустить терминал
-
-### Настройка плагина
-
+3. А также в конце добавить
 ```
-  # set orange color
+# set orange color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
 # if color is not set, add this line (uncomment) to the end of the file ~/.zshrc
 # export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=3"
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='15'
-  # bind shortcut: ctrl + space
+# bind shortcut: ctrl + space
 bindkey '^ ' autosuggest-accept
 ```
+4. Запустить команду `source ~/.zshrc` либо перезапустить терминал
